@@ -1,0 +1,36 @@
+{
+  "origin_ip": "200.141.21.110",
+  "bad_markers": ["One moment, please", "Fatal error", "Parse error", "Warning:</b>", "Index of /", "Welcome to Hestia", "<title>Hestia", "Default Web Page"],
+  "urls": [
+    {"url": "https://paraguainamao.com/", "contains": "Paraguai na Mão"},
+    {"url": "https://paraguainamao.com/precos", "contains": "Preços em Ciudad del Este"},
+    {"url": "https://paraguainamao.com/buscar?q=iphone", "contains": "Busca: iphone", "min_count": {"text": "iphone", "n": 5}},
+    {"url": "https://www.paraguainamao.com/api/v1/home", "json": true, "json_key": "dados"},
+    {"url": "https://www.paraguainamao.com/api/v1/travessia", "json": true, "json_key": "dados"},
+    {"url": "https://www.diretamentedafronteira.com.br/", "contains": "Diretamente da Fronteira"},
+    {"url": "https://blog.diretamentedafronteira.com.br/", "contains": "Blog Diretamente da Fronteira"},
+    {"url": "https://painel.diretamentedafronteira.com.br/admin/login.php", "contains": "Entrar"},
+    {"url": "https://influencers.diretamentedafronteira.com.br/", "contains": "Influencers Paraguai"},
+    {"url": "https://fronteiraplay.com/", "contains": "Fronteira Play"},
+    {"url": "https://www.groupquantumpro.com.br/", "contains": "GROUP QUANTUM PRO"}
+  ],
+  "must_not_be_200": [
+    "https://paraguainamao.com/uploads/carteira/",
+    "https://paraguainamao.com/cache/"
+  ],
+  "ssl_hosts": [
+    {"host": "paraguainamao.com", "label": "paraguainamao.com (borda Cloudflare)"},
+    {"host": "paraguainamao.com", "connect": "200.141.21.110", "label": "paraguainamao.com (origem VPS, SNI)"},
+    {"host": "www.diretamentedafronteira.com.br"},
+    {"host": "blog.diretamentedafronteira.com.br"},
+    {"host": "painel.diretamentedafronteira.com.br"},
+    {"host": "influencers.diretamentedafronteira.com.br"},
+    {"host": "fronteiraplay.com"},
+    {"host": "www.groupquantumpro.com.br"}
+  ],
+  "ssl_min_days": 14,
+  "max_seconds": 8,
+  "attempts": 3,
+  "retry_delay": 10,
+  "timeout": 20
+}

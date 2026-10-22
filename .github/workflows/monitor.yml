@@ -1,0 +1,18 @@
+name: Monitor (a cada 10 min)
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: monitor
+  cancel-in-progress: false
+jobs:
+  checar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checar sites
+        run: python3 monitor.py check
